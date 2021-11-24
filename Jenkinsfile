@@ -20,6 +20,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 dir(REPO_WORKING_DIR) {
+                    sh 'chmod +x gradlew'
                     sh './gradlew clean :app:assembleRelease'
                 }
             }
