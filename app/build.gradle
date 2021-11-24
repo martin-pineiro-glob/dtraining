@@ -16,18 +16,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs{
-        create("release") {
-            storeFile = file("C:\\Users\\martin.pineiro\\keystores\\upload-keystore.jks")
-            storePassword = "keystoretest"
-            keyAlias = "uploadtest"
-            keyPassword = "keystoretest"
-        }
-    }
-
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
