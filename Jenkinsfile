@@ -19,6 +19,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                dir(REPO_WORKING_DIR) {
+                    sh './gradlew clean '
+                }
             }
         }
         stage('Test') {

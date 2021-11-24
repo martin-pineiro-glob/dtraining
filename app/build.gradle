@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+
+    String jenkinsHome = System.getenv("JENKINS_HOME")
     compileSdk 31
 
     defaultConfig {
@@ -16,10 +18,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("$jenkinsHome/secrets/jenkins-keystore.jks")
+            storePassword "jenkins"
+            keyAlias "jenkins-key"
+            keyPassword "jenkins"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
