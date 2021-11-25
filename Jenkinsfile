@@ -4,6 +4,7 @@ pipeline {
     environment {
         REPO_URL = 'https://github.com/martin-pineiro-glob/dtraining.git'
         REPO_WORKING_DIR = 'tempRepoDir'
+        APPCENTER_TOKEN = '461035e3fe44bb713a1f4f07f5075020ed506209'
     }
 
     stages {
@@ -32,7 +33,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying to appcenter....'
+                appCenter apiToken: APPCENTER_TOKEN
+                          ownerName: 'martin-pineiro'
+                          appName: 'dtraining-test-app'
+                          pathToApp: 'app/build/outputs/apk/release/app-release.apk'
             }
         }
     }
