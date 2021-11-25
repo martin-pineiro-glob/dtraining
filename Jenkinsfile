@@ -34,9 +34,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to appcenter....'
-                appCenter apiToken: APPCENTER_TOKEN
-                          ownerName: 'martin-pineiro'
-                          appName: 'dtraining-test-app'
+                appCenter apiToken: APPCENTER_TOKEN,
+                          ownerName: 'martin-pineiro',
+                          appName: 'dtraining-test-app',
                           pathToApp: 'app/build/outputs/apk/release/app-release.apk'
             }
         }
