@@ -4,7 +4,7 @@ pipeline {
     environment {
         REPO_URL = 'https://github.com/martin-pineiro-glob/dtraining.git'
         REPO_WORKING_DIR = 'tempRepoDir'
-        APPCENTER_TOKEN = '461035e3fe44bb713a1f4f07f5075020ed506209'
+        APPCENTER_TOKEN = 'ef10bca13cd516b795c53dcfad729ee867d9b5a9'
         APK_DIR = 'tempRepoDir/app/build/outputs/apk/release/app-release.apk'
     }
 
