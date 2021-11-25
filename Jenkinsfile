@@ -37,7 +37,8 @@ pipeline {
                 appCenter apiToken: APPCENTER_TOKEN,
                           ownerName: 'martin-pineiro',
                           appName: 'dtraining-test-app',
-                          pathToApp: 'app/build/outputs/apk/release/app-release.apk'
+                          pathToApp: 'app/build/outputs/apk/release/app-release.apk',
+                          distributionGroups: 'internal'
             }
         }
     }
