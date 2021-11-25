@@ -38,8 +38,8 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 appCenter apiToken: APPCENTER_TOKEN,
-                          ownerName: 'Martín Piñeiro Vázquez',
-                          appName: 'dtraining test app',
+                          ownerName: 'martin.pineiro',
+                          appName: 'dtraining-test-app',
                           pathToApp: APK_DIR,
                           distributionGroups: 'internal'
             }
